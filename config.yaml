@@ -1,0 +1,44 @@
+native_language: ru
+languages:
+  en:
+    spacy_model: en_core_web_sm
+    deck: LingoForge::English
+    frequency_band:
+      min_rank: 1000
+      max_rank: 5000
+    idioms: []
+    slang: []
+    grammar_markers: []
+  de:
+    spacy_model: de_core_news_sm
+    deck: LingoForge::Deutsch
+    frequency_band:
+      min_rank: 1000
+      max_rank: 5000
+    idioms: []
+    slang: []
+    grammar_markers: []
+paths:
+  raw_db: output/raw.db
+  main_db: output/main.db
+  data: data
+  output: output
+  dictionary: data/dictionary.json
+  last_dialogue: output/last_dialogue.txt
+anki:
+  model: Basic
+translation:
+  provider: llm
+llm:
+  provider: ollama
+  model: qwen2.5:7b
+  base_url: http://localhost:11434
+whisper:
+  model: small
+  device: cpu
+  compute_type: int8
+media:
+  video_extensions: [mp4, mkv, mov, avi, webm]
+dialogue:
+  record_seconds: 10
+network_timeout: 120
